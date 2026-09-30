@@ -1,0 +1,186 @@
+name: Amend or dispute a record
+description: >-
+  Every record in this knowledge base is independently amendable and each one
+  carries its own case against its own proposal. If you disagree with a
+  proposal, or you measured something that changes it, amend that record —
+  do not open a rival one. The record id is the anchor that survives the
+  record being rewritten, so disagreement has somewhere to go.
+
+title: "Amend or dispute a knowledge-base record"
+labels:
+  - amendment
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **Amend the record, do not open a rival record.**
+
+        A rival record splits one argument in two and neither half is
+        complete. If you think `KB-022` is wrong, the disagreement goes in
+        `KB-022`'s `## Cons` and in its `## Amendment history` — where the
+        next reader will actually find it.
+
+        Two things that are usually welcome:
+
+        - **`status: rejected` is a good outcome.** Writing down why a
+          plausible reduction should not be done stops the next person
+          re-proposing it. That is the highest-value amendment anyone can make.
+        - **Disagreement is a contribution, not a nuisance.** A PR that
+          strengthens a record's `## Cons` needs no permission from the
+          record's author.
+  - type: dropdown
+    id: record
+    attributes:
+      label: Record
+      description: >-
+        If the record you are arguing with is not listed — or you are adding
+        one — use "Other / new record" and name the id in the field below.
+      options:
+        - "KB-001 — 6 capability facades (defence)"
+        - "KB-002 — three auth mechanisms (defence)"
+        - "KB-003 — one process, 35k lines QML (defence)"
+        - "KB-004 — one palette → 19 app configs (defence)"
+        - "KB-005 — 2,076-line Bar.qml (defence)"
+        - "KB-010 — 445 commands: size distribution, hidden, families (measurement)"
+        - "KB-011 — the ~45 ms dispatcher, and why it exists (measurement)"
+        - "KB-012 — 121.7 MB install, 97% themes, 4.5 GB decoded (measurement)"
+        - "KB-013 — 10 panel models, 2,137 lines, no shared layer (measurement)"
+        - "KB-014 — 106 migrations, never pruned (open question)"
+        - "KB-020 — ship wallpapers at display resolution (reduction)"
+        - "KB-021 — build the command routing table once (reduction)"
+        - "KB-022 — collapse argument-dispatch commands (reduction)"
+        - "KB-023 — give the ten panel models one shared polling primitive (reduction)"
+        - "KB-024 — stop shipping migrations that can no longer be needed (reduction)"
+        - "KB-025 — two command names share one body (reduction)"
+        - "KB-026 — one shared helper library, `usage()` × 33 (reduction)"
+        - "Other / new record"
+    validations:
+      required: true
+  - type: input
+    id: record-id
+    attributes:
+      label: Record id
+      description: >-
+        The stable id, e.g. `KB-022`. **Never reuse an id** — it is the anchor
+        that survives the record being rewritten.
+      placeholder: "KB-022-argument-dispatch-collapse"
+    validations:
+      required: true
+  - type: dropdown
+    id: section
+    attributes:
+      label: Which section?
+      multiple: true
+      description: >-
+        All seven sections are required by the schema, so you are editing an
+        existing one, not adding a new kind of section.
+      options:
+        - "## Problem — the measured fact"
+        - "## Proposal — what should change"
+        - "## Pros — the case for"
+        - "## Cons — the case against"
+        - "## Risk — what breaks, and how it would be noticed"
+        - "## Evidence — the commands to reproduce it"
+        - "## Amendment history — one appended line"
+    validations:
+      required: true
+  - type: dropdown
+    id: stance
+    attributes:
+      label: Are you agreeing or disagreeing with the proposal?
+      description: >-
+        Plain answer. "Agree" does not mean "the record is fine as written" —
+        if you are strengthening the argument, say which section.
+      options:
+        - Disagree — I think the proposal is wrong
+        - Partly agree — right direction, wrong mechanism or wrong scope
+        - Agree, and it is stronger than written
+        - Agree, and I have a measurement that closes a gap
+        - Not about the proposal — the record's numbers or framing are wrong
+    validations:
+      required: true
+  - type: textarea
+    id: change
+    attributes:
+      label: What is the change?
+      description: >-
+        The substance, not the wording. Quote the line you would replace, so
+        the diff is obvious. Be specific — named files, named counts, named
+        mechanisms. "Refactor the panels" is not a change.
+      placeholder: |
+        Replace "~34 files → 3" in ## Proposal with a specific mapping, and add
+        to ## Cons: two of the collapsed commands are bound in default
+        keybindings, so a bad fallback is silent.
+      render: markdown
+    validations:
+      required: true
+  - type: textarea
+    id: backing
+    attributes:
+      label: What measurement backs it?
+      description: >-
+        The commands you ran and what they printed. If the change is an
+        argument rather than a number, say so and point at the section of the
+        record it contradicts. An unmeasured claim gets marked `speculative`
+        or rejected in review, so stating the evidence plainly saves a round
+        trip.
+      placeholder: |
+        $ grep -rl "omarchy-theme-set-" /usr/share/omarchy/bin/ | wc -l
+        34
+        $ grep -rn "omarchy-theme-set" /usr/share/omarchy/config/ | head -20
+    validations:
+      required: true
+  - type: textarea
+    id: output
+    attributes:
+      label: Pasted output
+      description: >-
+        If you ran `bash tools/measure.sh`, paste the output here in a code
+        block. Otherwise paste whatever the commands above printed.
+      placeholder: |
+        ```
+        $ bash tools/measure.sh
+        ...
+        ```
+      render: shell
+    validations:
+      required: false
+  - type: input
+    id: omarchy-version
+    attributes:
+      label: "`omarchy version`"
+      placeholder: "omarchy 2026-xx-xx"
+    validations:
+      required: false
+  - type: textarea
+    id: schema
+    attributes:
+      label: Which frontmatter fields change, and why?
+      description: >-
+        `status`, `strength`, `confidence`, `surface`, `amendments`. Say which
+        and why. If none change, write "none" — a prose-only fix does not
+        bump `amendments`.
+      placeholder: |
+        status: proposed → rejected (the fallback cannot be made safe)
+        strength: moderate → strong (the mapping is now measured)
+        amendments: 1 → 2
+    validations:
+      required: false
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: Confirm before opening
+      options:
+        - label: >-
+            I am amending this record, not creating a rival one. If I disagree
+            with the proposal, my change is in its `## Cons`.
+          required: true
+        - label: >-
+            I did not edit any earlier `## Amendment history` line. I appended
+            one.
+          required: true
+        - label: >-
+            I am not implementing anything. No patch to the installed system,
+            no change outside this repository.
+          required: true

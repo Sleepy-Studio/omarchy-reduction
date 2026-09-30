@@ -1,0 +1,166 @@
+name: Measurement appeal
+description: >-
+  You ran a command from a record's Evidence section and got a different
+  number. Say so here, and say whether the difference is structural or
+  volatile. Volatile differences — dispatcher milliseconds, RSS, process
+  counts — are expected to differ between machines and are not a bug. Filing
+  them costs the maintainers a triage round and buries the appeals that
+  matter, so this form asks you to classify first.
+
+# Structural: command count, QML/bash line counts, migration count, install
+# size, panel model count. These should match on a comparable Omarchy version.
+# If they do not, the record is mis-dated or wrong.
+# Volatile: dispatcher milliseconds, RSS, process count, decoded wallpaper
+# memory. These always differ and always will.
+
+title: "Measurement appeal: a number is wrong"
+labels:
+  - measurement-appeal
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Every number in this knowledge base comes from `tools/measure.sh`, run
+        against one machine and committed to `baseline/measurements.json`.
+        Other machines differ. That is expected and is not a broken baseline.
+
+        **The one distinction that matters:**
+
+        - **Structural** — command count, lines of bash or QML, migration
+          count, install size, panel model count. If yours differs, the record
+          is genuinely wrong or out of date. This is a real appeal.
+        - **Volatile** — dispatcher milliseconds, RSS, process count, decoded
+          wallpaper memory. These will differ on your machine and on mine, and
+          will differ again on the same machine tomorrow. **This is not a bug
+          and there is nothing to fix.** Please do not open an issue for it.
+
+        If you are unsure which kind of number you have, answer the last
+        question and let a maintainer classify it.
+  - type: input
+    id: record
+    attributes:
+      label: Which record is wrong?
+      description: >-
+        The KB id, and the section it is wrong in. e.g. `KB-010`, `## Problem`.
+      placeholder: "KB-010, ## Problem — 445 commands"
+    validations:
+      required: true
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What did you measure it as?
+      multiple: true
+      options:
+        - Structural — a count or a line count
+        - Volatile — a timing, a memory figure, a process count
+        - I don't know
+    validations:
+      required: true
+  - type: textarea
+    id: quoted
+    attributes:
+      label: What does the record say?
+      description: >-
+        The number as the record states it, and the line it appears on. Quote
+        it exactly so we are comparing the same string.
+      placeholder: |
+        "34,842 lines of bash across 445 commands" — KB-010, ## Problem
+      render: text
+    validations:
+      required: true
+  - type: textarea
+    id: measure-output
+    attributes:
+      label: "Output of `bash tools/measure.sh` on your machine"
+      description: >-
+        Paste the whole output, in a code block. Not a screenshot, not a
+        summary — the raw text, including the command counts and line counts.
+        Truncated output cannot be acted on.
+      placeholder: |
+        ```
+        $ bash tools/measure.sh
+        ...paste it all...
+        ```
+      render: shell
+    validations:
+      required: true
+  - type: textarea
+    id: commands
+    attributes:
+      label: What did you run, exactly?
+      description: >-
+        Any command you ran that is not part of `measure.sh` — the specific
+        `wc -l`, `find`, `grep` or whatever you used. If you ran the record's
+        Evidence section verbatim, say so and note where you deviated.
+      placeholder: |
+        $ find /usr/bin -type l -name 'omarchy-*' | wc -l
+        438
+    validations:
+      required: false
+  - type: input
+    id: version
+    attributes:
+      label: "`omarchy version`"
+      description: >-
+        Required. A structural difference almost always means a different
+        version, and without this we cannot tell a wrong record from a
+        different system.
+      placeholder: "omarchy 2026-xx-xx"
+    validations:
+      required: true
+  - type: input
+    id: kernel
+    attributes:
+      label: Kernel / distribution
+      description: Optional, but useful when `omarchy version` is ambiguous.
+      placeholder: "6.12.4-arch1-1, Arch"
+    validations:
+      required: false
+  - type: textarea
+    id: gpu-panel
+    attributes:
+      label: GPU and panel setup
+      description: >-
+        Only if the record is about wallpapers, themes, panels, or anything
+        rendered. Otherwise leave this blank — it is not relevant and we do
+        not need your hardware.
+      placeholder: |
+        GPU: AMD Radeon 780M (RADV)
+        Panels: 2x 2560x1440 @ 144Hz, 1x 1920x1080 @ 60Hz
+        Scale: 1.0 / 1.25 / 1.0
+    validations:
+      required: false
+  - type: dropdown
+    id: classification
+    attributes:
+      label: "Is the difference structural or volatile?"
+      description: >-
+        Your own read. Pick `volatile` if you are unsure — a maintainer will
+        reclassify, and a volatile appeal that is marked as such is a much
+        cheaper thing to close.
+      options:
+        - Structural — counts or line counts differ
+        - Volatile — only timings, memory, or process counts differ
+        - Both — I don't know which number is the important one
+    validations:
+      required: true
+  - type: textarea
+    id: your-number
+    attributes:
+      label: Your number
+      description: >-
+        The figure you actually got, so it does not have to be dug out of the
+        pasted output.
+      placeholder: "438 commands, not 445"
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: Anything else
+      description: >-
+        A pattern you noticed, a machine you also tried, an install path that
+        differs. Optional.
+    validations:
+      required: false

@@ -1,0 +1,154 @@
+name: Propose a new measurement or finding
+description: >-
+  A new record, or a new measurement inside an existing one. Defence records —
+  the things that look reducible and should not be — are equally welcome and
+  make up half this repository. A knowledge base that only lists things to
+  change is not a knowledge base.
+
+title: "Propose a new measurement or finding"
+labels:
+  - new-record
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Records are one file each in `knowledge-base/findings/`, validated
+        against `knowledge-base/SCHEMA.md`, and must fill all seven sections:
+        `## Problem`, `## Proposal`, `## Pros`, `## Cons`, `## Risk`,
+        `## Evidence`, `## Amendment history`.
+
+        **You do not have to be sure it is right.** `open-question` and
+        `speculative` are legitimate values, and a record that says "we do not
+        know, here is how to find out" stops the next person re-deriving it.
+        `status: rejected` with a stated reason is a good outcome too.
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Which of the four types is this?
+      description: >-
+        The schema's vocabulary, unchanged. Pick honestly — a `defence` filed
+        as a `reduction` is a finding that gets argued with instead of
+        recorded.
+      options:
+        - "measurement — a measured fact with no recommendation attached"
+        - "defence — something looks reducible and should NOT be"
+        - "reduction — something could be smaller or simpler"
+        - "open-question — unresolved; needs investigation or upstream discussion"
+    validations:
+      required: true
+  - type: textarea
+    id: claim
+    attributes:
+      label: What is the claim?
+      description: >-
+        One or two sentences, specific enough to be wrong. Named files, named
+        counts, named mechanisms. A claim nobody can disagree with is not a
+        finding.
+      placeholder: |
+        All ten panel models poll their services on their own timers, and six
+        of them implement the same cache-and-refresh logic independently.
+      render: markdown
+    validations:
+      required: true
+  - type: textarea
+    id: how-to-measure
+    attributes:
+      label: How would you measure it?
+      description: >-
+        The exact commands, so a reader can run them on a machine that is not
+        yours. This becomes the record's `## Evidence` section, so it has to
+        work for a stranger with no context.
+      placeholder: |
+        $ wc -l /usr/share/omarchy/bin/omarchy-theme-set-*
+        $ grep -rn "Timer\|interval" /usr/share/omarchy/shell/panels/*/  | wc -l
+      render: shell
+    validations:
+      required: true
+  - type: textarea
+    id: result
+    attributes:
+      label: "What result would change?"
+      description: >-
+        Name the decision it informs. "If it is more than N files, KB-023
+        should be split per panel" is a useful answer. "It would be nice to
+        know" is not — that is fine, but file it as an `open-question`.
+      placeholder: |
+        If the duplication is concentrated in two panels, the proposal should
+        name those two and stop. If it is spread evenly, the shared primitive
+        in KB-023 is the cheaper change.
+      render: markdown
+    validations:
+      required: true
+  - type: input
+    id: id
+    attributes:
+      label: Proposed id
+      description: >-
+        `KB-NNN-slug`. Take the next free number. **Never reuse an id** — the
+        id is the anchor that survives the record being rewritten.
+      placeholder: "KB-013-panel-data-models"
+    validations:
+      required: true
+  - type: input
+    id: title
+    attributes:
+      label: "Proposed title"
+      description: Imperative, specific, one line.
+      placeholder: "Give the ten panel models one shared polling primitive"
+    validations:
+      required: true
+  - type: dropdown
+    id: surface
+    attributes:
+      label: What does it touch?
+      multiple: true
+      options:
+        - commands
+        - shell / QML
+        - themes
+        - install / packaging
+        - migrations
+        - documentation
+        - process structure
+    validations:
+      required: true
+  - type: textarea
+    id: cons
+    attributes:
+      label: "The case against your own claim"
+      description: >-
+        Required by the schema, and the section that matters most. Write the
+        strongest objection you can — from someone who wants to keep things as
+        they are. A record whose cons are soft is not ready to be accepted.
+      placeholder: |
+        The apparent duplication may be deliberate: the panels are maintained
+        by different people, and a shared primitive makes every one of their
+        changes a merge conflict.
+      render: markdown
+    validations:
+      required: true
+  - type: textarea
+    id: appearance
+    attributes:
+      label: Does this claim say anything about how it looks?
+      description: >-
+        This repository will not claim to verify appearance. Nothing here can
+        be checked against a screenshot, so any visual claim is marked
+        unverified in the record and belongs to a human to check.
+      placeholder: "No — the claim is about line counts and dispatch cost."
+    validations:
+      required: true
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: Confirm before opening
+      options:
+        - label: >-
+            This describes and measures. It does not implement anything — no
+            patch to the installed system, no change outside this repository.
+          required: true
+        - label: >-
+            Nothing in this claim is a personal path, a hostname, a username,
+            or any other identifying data from my machine.
+          required: true

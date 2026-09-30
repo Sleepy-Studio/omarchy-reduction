@@ -1,0 +1,646 @@
+{
+  "generatedBy": "tools/measure.sh",
+  "measuredOn": "2026-09-30",
+  "commands": {
+    "count": 445,
+    "linesTotal": 34842,
+    "sizeBuckets": {
+      "thin_le15": 136,
+      "mid_16_60": 173,
+      "mid_61_300": 116,
+      "large_gt300": 20
+    },
+    "metadata": {
+      "summary": 443,
+      "name": 21,
+      "args": 179,
+      "examples": 112,
+      "requiresSudo": 90,
+      "hidden": 74,
+      "aliases": 9
+    },
+    "groupCount": 22,
+    "undeclaredMetadata": 2,
+    "largest": [
+      [
+        2407,
+        "upgrade-to-quattro"
+      ],
+      [
+        1591,
+        "windows-vm"
+      ],
+      [
+        1139,
+        "provision-owner"
+      ],
+      [
+        1091,
+        ""
+      ],
+      [
+        905,
+        "agent-usage-claude"
+      ],
+      [
+        652,
+        "dev-font"
+      ],
+      [
+        603,
+        "agent-usage-codex"
+      ],
+      [
+        597,
+        "menu-keybindings"
+      ],
+      [
+        511,
+        "agent-usage-fireworks"
+      ],
+      [
+        441,
+        "system-factory-reset"
+      ]
+    ],
+    "largestFamilies": [
+      [
+        "theme-set",
+        16
+      ],
+      [
+        "hyprland-monitor",
+        10
+      ],
+      [
+        "install-gaming",
+        9
+      ],
+      [
+        "remove-gaming",
+        9
+      ],
+      [
+        "install-service",
+        8
+      ],
+      [
+        "hyprland-window",
+        7
+      ],
+      [
+        "theme-bg",
+        6
+      ],
+      [
+        "agent-usage",
+        4
+      ],
+      [
+        "audio-output",
+        4
+      ],
+      [
+        "install-ai",
+        4
+      ],
+      [
+        "install-editor",
+        4
+      ],
+      [
+        "remove-ai",
+        4
+      ]
+    ],
+    "duplicateBodies": [],
+    "dispatcherMs": {
+      "version": 41.5,
+      "themeList": 10.6
+    }
+  },
+  "shell": {
+    "qmlFiles": 102,
+    "qmlLines": 34914,
+    "jsFiles": 28,
+    "jsLines": 4807,
+    "shellRootLines": 1744,
+    "uiComponents": 33,
+    "commonsSingletons": 4,
+    "panelCount": 10,
+    "panelModelLines": 2137,
+    "oversized": [
+      [
+        2076,
+        "plugins/bar/Bar.qml"
+      ],
+      [
+        1970,
+        "plugins/panels/network/Panel.qml"
+      ],
+      [
+        1854,
+        "plugins/dev-gallery/GalleryPanel.qml"
+      ],
+      [
+        1744,
+        "shell.qml"
+      ],
+      [
+        1427,
+        "plugins/menu/Menu.qml"
+      ],
+      [
+        1273,
+        "plugins/panels/tailscale/Panel.qml"
+      ],
+      [
+        1248,
+        "plugins/panels/audio/Panel.qml"
+      ],
+      [
+        1063,
+        "plugins/notifications/Service.qml"
+      ],
+      [
+        1045,
+        "plugins/panels/bluetooth/Panel.qml"
+      ],
+      [
+        942,
+        "plugins/agents/Panel.qml"
+      ]
+    ],
+    "schemaVersionPinned": true,
+    "registryLines": 743
+  },
+  "footprint": {
+    "installBytes": 127628291,
+    "themesBytes": 124097482,
+    "themeShareOfInstall": 0.972,
+    "wallpaperCount": 92,
+    "wallpaperStoredBytes": 112254852,
+    "wallpaperDecodedBytes": 4706966988,
+    "oversizedWallpapers": [
+      {
+        "file": "themes/retro-82/backgrounds/5-zen-boat.jpg",
+        "width": 10456,
+        "height": 3455,
+        "decodedBytes": 144501920,
+        "storedBytes": 2583385
+      },
+      {
+        "file": "themes/osaka-jade/backgrounds/3-mountain-moon.jpg",
+        "width": 7680,
+        "height": 4320,
+        "decodedBytes": 132710400,
+        "storedBytes": 2243941
+      },
+      {
+        "file": "themes/vantablack/backgrounds/1-twisted-stairs.jpg",
+        "width": 7680,
+        "height": 4320,
+        "decodedBytes": 132710400,
+        "storedBytes": 1116164
+      },
+      {
+        "file": "themes/vantablack/backgrounds/2-layers-deep.jpg",
+        "width": 7680,
+        "height": 4320,
+        "decodedBytes": 132710400,
+        "storedBytes": 978322
+      },
+      {
+        "file": "themes/tokyo-night/backgrounds/4-omakub.jpg",
+        "width": 6930,
+        "height": 3960,
+        "decodedBytes": 109771200,
+        "storedBytes": 2319559
+      },
+      {
+        "file": "themes/white/backgrounds/3-white.jpg",
+        "width": 6240,
+        "height": 4160,
+        "decodedBytes": 103833600,
+        "storedBytes": 2122220
+      },
+      {
+        "file": "themes/tokyo-night/backgrounds/3-sunset-lake.png",
+        "width": 7680,
+        "height": 3215,
+        "decodedBytes": 98764800,
+        "storedBytes": 2804358
+      },
+      {
+        "file": "themes/white/backgrounds/2-white.jpg",
+        "width": 6001,
+        "height": 4001,
+        "decodedBytes": 96040004,
+        "storedBytes": 412741
+      },
+      {
+        "file": "themes/lupine/backgrounds/01-cherry-blossom-bokeh.jpg",
+        "width": 6000,
+        "height": 4000,
+        "decodedBytes": 96000000,
+        "storedBytes": 2418875
+      },
+      {
+        "file": "themes/lupine/backgrounds/02-cherry-blossom-white.jpg",
+        "width": 6000,
+        "height": 4000,
+        "decodedBytes": 96000000,
+        "storedBytes": 5360348
+      },
+      {
+        "file": "themes/lupine/backgrounds/03-pastel-clouds.jpg",
+        "width": 6000,
+        "height": 4000,
+        "decodedBytes": 96000000,
+        "storedBytes": 3110883
+      },
+      {
+        "file": "themes/retro-82/backgrounds/6-abstract-pyramids.jpg",
+        "width": 6908,
+        "height": 3456,
+        "decodedBytes": 95496192,
+        "storedBytes": 3556677
+      },
+      {
+        "file": "themes/retro-82/backgrounds/3-glassy-lines.jpg",
+        "width": 6144,
+        "height": 3456,
+        "decodedBytes": 84934656,
+        "storedBytes": 3601602
+      },
+      {
+        "file": "themes/retro-82/backgrounds/4-gateway.jpg",
+        "width": 6144,
+        "height": 3456,
+        "decodedBytes": 84934656,
+        "storedBytes": 1756218
+      },
+      {
+        "file": "themes/retro-82/backgrounds/7-the-journey.jpg",
+        "width": 6144,
+        "height": 3456,
+        "decodedBytes": 84934656,
+        "storedBytes": 1459723
+      },
+      {
+        "file": "themes/retro-82/backgrounds/2-dusk-guardian.jpg",
+        "width": 5616,
+        "height": 3744,
+        "decodedBytes": 84105216,
+        "storedBytes": 1054746
+      },
+      {
+        "file": "themes/tokyo-night/backgrounds/0-winding-road.jpg",
+        "width": 6016,
+        "height": 3384,
+        "decodedBytes": 81432576,
+        "storedBytes": 4445106
+      },
+      {
+        "file": "themes/ethereal/backgrounds/2-meadow.jpg",
+        "width": 6000,
+        "height": 3375,
+        "decodedBytes": 81000000,
+        "storedBytes": 4028969
+      },
+      {
+        "file": "themes/white/backgrounds/1-white.jpg",
+        "width": 6000,
+        "height": 3375,
+        "decodedBytes": 81000000,
+        "storedBytes": 1135994
+      },
+      {
+        "file": "themes/lupine/backgrounds/05-abstract-wave.jpg",
+        "width": 5000,
+        "height": 4000,
+        "decodedBytes": 80000000,
+        "storedBytes": 431716
+      },
+      {
+        "file": "themes/nord/backgrounds/2-night-hawks.png",
+        "width": 6000,
+        "height": 3274,
+        "decodedBytes": 78576000,
+        "storedBytes": 1825628
+      },
+      {
+        "file": "themes/lupine/backgrounds/04-elegant-blue-wave.jpg",
+        "width": 6000,
+        "height": 3000,
+        "decodedBytes": 72000000,
+        "storedBytes": 626432
+      },
+      {
+        "file": "themes/vantablack/backgrounds/3-layers-stacked.jpg",
+        "width": 6000,
+        "height": 3000,
+        "decodedBytes": 72000000,
+        "storedBytes": 455189
+      },
+      {
+        "file": "themes/retro-82/backgrounds/1-in-the-groove.jpg",
+        "width": 5184,
+        "height": 3456,
+        "decodedBytes": 71663616,
+        "storedBytes": 1773117
+      },
+      {
+        "file": "themes/lumon/backgrounds/02-opinions-equally.jpg",
+        "width": 5181,
+        "height": 3456,
+        "decodedBytes": 71622144,
+        "storedBytes": 2125671
+      },
+      {
+        "file": "themes/hackerman/backgrounds/1-synth-scape.jpg",
+        "width": 5000,
+        "height": 3542,
+        "decodedBytes": 70840000,
+        "storedBytes": 2330372
+      },
+      {
+        "file": "themes/hackerman/backgrounds/2-geometric.jpg",
+        "width": 5000,
+        "height": 3542,
+        "decodedBytes": 70840000,
+        "storedBytes": 1936468
+      },
+      {
+        "file": "themes/ristretto/backgrounds/0-launch.png",
+        "width": 5120,
+        "height": 3414,
+        "decodedBytes": 69918720,
+        "storedBytes": 251892
+      },
+      {
+        "file": "themes/tokyo-night/backgrounds/2-swirl-buck.jpg",
+        "width": 6336,
+        "height": 2688,
+        "decodedBytes": 68124672,
+        "storedBytes": 2941090
+      }
+    ],
+    "largestWallpapers": [
+      {
+        "file": "themes/retro-82/backgrounds/5-zen-boat.jpg",
+        "width": 10456,
+        "height": 3455,
+        "decodedBytes": 144501920,
+        "storedBytes": 2583385
+      },
+      {
+        "file": "themes/osaka-jade/backgrounds/3-mountain-moon.jpg",
+        "width": 7680,
+        "height": 4320,
+        "decodedBytes": 132710400,
+        "storedBytes": 2243941
+      },
+      {
+        "file": "themes/vantablack/backgrounds/1-twisted-stairs.jpg",
+        "width": 7680,
+        "height": 4320,
+        "decodedBytes": 132710400,
+        "storedBytes": 1116164
+      },
+      {
+        "file": "themes/vantablack/backgrounds/2-layers-deep.jpg",
+        "width": 7680,
+        "height": 4320,
+        "decodedBytes": 132710400,
+        "storedBytes": 978322
+      },
+      {
+        "file": "themes/tokyo-night/backgrounds/4-omakub.jpg",
+        "width": 6930,
+        "height": 3960,
+        "decodedBytes": 109771200,
+        "storedBytes": 2319559
+      },
+      {
+        "file": "themes/white/backgrounds/3-white.jpg",
+        "width": 6240,
+        "height": 4160,
+        "decodedBytes": 103833600,
+        "storedBytes": 2122220
+      },
+      {
+        "file": "themes/tokyo-night/backgrounds/3-sunset-lake.png",
+        "width": 7680,
+        "height": 3215,
+        "decodedBytes": 98764800,
+        "storedBytes": 2804358
+      },
+      {
+        "file": "themes/white/backgrounds/2-white.jpg",
+        "width": 6001,
+        "height": 4001,
+        "decodedBytes": 96040004,
+        "storedBytes": 412741
+      }
+    ],
+    "duplicateFiles": [
+      [
+        "themes/catppuccin/icons.theme",
+        "themes/last-horizon/icons.theme"
+      ],
+      [
+        "themes/catppuccin-latte/icons.theme",
+        "themes/ethereal/icons.theme",
+        "themes/flexoki-light/icons.theme",
+        "themes/kanagawa/icons.theme",
+        "themes/nord/icons.theme",
+        "themes/rose-pine/icons.theme"
+      ],
+      [
+        "themes/everforest/icons.theme",
+        "themes/osaka-jade/icons.theme"
+      ],
+      [
+        "themes/hackerman/icons.theme",
+        "themes/lumon/icons.theme"
+      ],
+      [
+        "themes/matte-black/backgrounds/2-dot-hands.jpg",
+        "themes/vantablack/backgrounds/0-dot-hands.jpg"
+      ],
+      [
+        "themes/vantablack/unlock.png",
+        "themes/white/unlock.png"
+      ]
+    ],
+    "configTemplateDirs": [
+      "alacritty",
+      "autostart",
+      "btop",
+      "chromium",
+      "chromium-flags.conf",
+      "fcitx5",
+      "foot",
+      "ghostty",
+      "git",
+      "herdr",
+      "hypr",
+      "hyprland-preview-share-picker",
+      "imv",
+      "kitty",
+      "lazygit",
+      "obsidian",
+      "omarchy",
+      "opencode",
+      "starship.toml",
+      "tmux",
+      "wireplumber",
+      "xournalpp"
+    ],
+    "defaultTreeDirs": [
+      "agents",
+      "alacritty",
+      "applications",
+      "audio",
+      "bash",
+      "bashrc",
+      "chromium",
+      "environment.d",
+      "firefox",
+      "fontconfig",
+      "fonts",
+      "foot",
+      "ghostty",
+      "gpg",
+      "hypr",
+      "libalpm",
+      "limine",
+      "nautilus-python",
+      "omarchy",
+      "pacman",
+      "plymouth",
+      "sddm",
+      "snapper",
+      "systemd",
+      "tensaku",
+      "themed",
+      "udev",
+      "uwsm",
+      "voxtype",
+      "wayland-sessions",
+      "wireplumber",
+      "xcompose",
+      "xdg-terminal-exec"
+    ]
+  },
+  "runtime": {
+    "programs": [
+      {
+        "program": "quickshell",
+        "instances": 1,
+        "anonymousKb": 330804,
+        "privateDirtyKb": 331060
+      },
+      {
+        "program": "omarchy-crash-w",
+        "instances": 2,
+        "anonymousKb": 1400,
+        "privateDirtyKb": 984
+      },
+      {
+        "program": "omarchy-hyprlan",
+        "instances": 2,
+        "anonymousKb": 1052,
+        "privateDirtyKb": 548
+      },
+      {
+        "program": "omarchy-system-",
+        "instances": 1,
+        "anonymousKb": 388,
+        "privateDirtyKb": 388
+      },
+      {
+        "program": "omarchy-launch-",
+        "instances": 1,
+        "anonymousKb": 384,
+        "privateDirtyKb": 384
+      }
+    ],
+    "quickshellAnonymousKb": 330804,
+    "totalAnonymousKb": 334028,
+    "systemProcessCount": 416
+  },
+  "mechanisms": {
+    "firedHookEvents": {
+      "battery-low": [
+        "omarchy-battery-low"
+      ],
+      "font-set": [
+        "omarchy-font-set"
+      ],
+      "post-update": [
+        "omarchy-provision-first-run",
+        "omarchy-provision-first-run",
+        "omarchy-provision-first-run",
+        "omarchy-update"
+      ],
+      "pre-refresh-pacman": [
+        "omarchy-refresh-pacman"
+      ],
+      "theme-set": [
+        "omarchy-theme-set"
+      ]
+    },
+    "firedHookEventCount": 5,
+    "migrationsShipped": 106,
+    "themedTemplates": [
+      "alacritty.toml.tpl",
+      "btop.theme.tpl",
+      "chromium.theme.tpl",
+      "claude.json.tpl",
+      "foot.ini.tpl",
+      "ghostty.conf.tpl",
+      "gum_env.lua.tpl",
+      "helix.toml.tpl",
+      "hermes.yaml.tpl",
+      "hyprland-preview-share-picker.css.tpl",
+      "hyprland.lua.tpl",
+      "keyboard.rgb.tpl",
+      "kitty.conf.tpl",
+      "neovim.lua.tpl",
+      "obsidian.css.tpl",
+      "pi.json.tpl",
+      "shell.toml.tpl",
+      "t3code.json.tpl",
+      "vscode-theme.json.tpl"
+    ],
+    "capabilityFacades": [
+      "PluginAppLibraryApi.qml",
+      "PluginBarStateApi.qml",
+      "PluginBarWidgetRegistryApi.qml",
+      "PluginFirstPartyServiceApi.qml",
+      "PluginRegistryApi.qml",
+      "PluginShellApi.qml"
+    ],
+    "hostServices": [
+      "AppLibrary.qml",
+      "BarWidgetRegistry.qml",
+      "PluginAppLibraryApi.qml",
+      "PluginBarStateApi.qml",
+      "PluginBarWidgetRegistryApi.qml",
+      "PluginFirstPartyServiceApi.qml",
+      "PluginRegistry.qml",
+      "PluginRegistryApi.qml",
+      "PluginShellApi.qml"
+    ],
+    "hyprBindingModules": [
+      "bindings/applications.lua",
+      "bindings/clipboard.lua",
+      "bindings/media.lua",
+      "bindings/tiling.lua",
+      "bindings/utilities.lua",
+      "bindings/voxtype.lua"
+    ]
+  }
+}
