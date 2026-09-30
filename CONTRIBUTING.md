@@ -22,9 +22,29 @@ disagreement has somewhere to go.
    numbers in the prose still match `baseline/measurements.json`.
 5. **Open a PR** explaining what changed and what you measured.
 
-GitHub Discussions is for the questions that are not yet records —
-"is this a problem anyone else has?", "what is the supported upgrade
-window?". Answer one there and it can become a record.
+GitHub Discussions is for questions that are not yet records. See
+[`CONTRIBUTING.md`](CONTRIBUTING.md) for the full loop, and
+[`PUBLISHING.md`](PUBLISHING.md) for how the repository is configured.
+
+### Before you file a measurement appeal
+
+These records were measured on one machine, on Omarchy **4.0.4-1** (stable).
+The exact build is recorded as data in `baseline/measurements.json` under
+`context`. If you are on a different version, your *structural* numbers —
+command count, line counts, plugin count, migration count — will legitimately
+differ. That is a different Omarchy version, not a broken record.
+
+So before appealing a number, check which kind it is:
+
+- **Structural** (counts, lines, files) — differs if you are on a different
+  Omarchy version. Worth reporting, and worth including your
+  `omarchy version`. It means the record needs re-dating, not correcting.
+- **Volatile** (timings in ms, RSS, process count) — always differs. Every
+  machine, every run, including between two runs on the same machine. Not a
+  bug; please don't file it.
+
+`bash tools/measure.sh` prints the split, and KB-011 states the limits of its
+own timing numbers explicitly.
 
 ## Adding a record
 

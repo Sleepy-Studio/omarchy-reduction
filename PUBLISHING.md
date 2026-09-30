@@ -68,9 +68,13 @@ Omarchy, and that belongs somewhere else.
 
 ## The one number that will not match
 
-The records were measured on an **edge/dev channel** Omarchy build. A reader on
-stable will see different *structural* numbers — command count, line counts,
-plugin count — and file a measurement appeal that is not really one. Worth a
-line in the README before wide circulation; see
-[KB-011](knowledge-base/findings/KB-011-dispatcher-cost.md) for why the timing
-figures are single-machine regardless.
+The records were measured on **omarchy 4.0.4-1** (stable), on one machine.
+A reader on a different build will see different *structural* numbers — command
+count, line counts, plugin count, migration count — and file a measurement
+appeal that is not really one.
+
+The exact build is recorded as data in `baseline/measurements.json` under
+`context`, so it cannot drift from the numbers beside it. `README.md` and
+`CONTRIBUTING.md` both explain the structural-vs-volatile split, and
+[KB-011](knowledge-base/findings/KB-011-dispatcher-cost.md) states the limits
+of its own timing numbers explicitly.

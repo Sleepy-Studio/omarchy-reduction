@@ -340,6 +340,42 @@ def measure_mechanisms(omarchy_path):
 
 # ------------------------------------------------------------------ main
 
+# ---------------------------------------------------------------- context
+
+def measure_context():
+    """Which Omarchy this was measured on.
+
+    Structural numbers (command count, line counts) are only comparable across
+    the same build, so the build is recorded as data rather than left as prose
+    in a README that can drift from it. The reader's own `omarchy version` is
+    what decides whether a structural difference is a version difference or a
+    mistake.
+    """
+    version = "unknown"
+    try:
+        r = subprocess.run(["omarchy", "version"], capture_output=True,
+                           text=True, timeout=15)
+        if r.returncode == 0 and r.stdout.strip():
+            version = r.stdout.strip().splitlines()[0]
+    except Exception:
+        pass
+    try:
+        pkg = subprocess.run(["pacman", "-Q", "omarchy", "omarchy-dev"],
+                             capture_output=True, text=True, timeout=15).stdout
+    except Exception:
+        pkg = ""
+    channel = "unknown"
+    if "dev" in version.lower():
+        channel = "edge/dev"
+    elif version != "unknown":
+        channel = "stable"
+    return {
+        "omarchyVersion": version,
+        "packages": [ln for ln in pkg.strip().splitlines() if ln],
+        "channel": channel,
+    }
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--omarchy-bin", default="/usr/bin")
@@ -354,6 +390,7 @@ def main():
     data = {
         "generatedBy": "tools/measure.sh",
         "measuredOn": time.strftime("%Y-%m-%d"),
+        "context": measure_context(),
         "commands": measure_commands(args.omarchy_bin),
         "shell": measure_shell(args.omarchy_path),
         "footprint": measure_footprint(args.omarchy_path),

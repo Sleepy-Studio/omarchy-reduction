@@ -1,6 +1,13 @@
 {
   "generatedBy": "tools/measure.sh",
   "measuredOn": "2026-09-30",
+  "context": {
+    "omarchyVersion": "4.0.4-1",
+    "packages": [
+      "omarchy 4.0.4-1"
+    ],
+    "channel": "stable"
+  },
   "commands": {
     "count": 445,
     "linesTotal": 34842,
@@ -115,8 +122,8 @@
     ],
     "duplicateBodies": [],
     "dispatcherMs": {
-      "version": 38.6,
-      "themeList": 9.7
+      "version": 40.2,
+      "themeList": 10.1
     }
   },
   "shell": {
@@ -539,8 +546,8 @@
       {
         "program": "quickshell",
         "instances": 1,
-        "anonymousKb": 428148,
-        "privateDirtyKb": 428404
+        "anonymousKb": 429200,
+        "privateDirtyKb": 429456
       },
       {
         "program": "omarchy-crash-w",
@@ -567,9 +574,9 @@
         "privateDirtyKb": 384
       }
     ],
-    "quickshellAnonymousKb": 428148,
-    "totalAnonymousKb": 431424,
-    "systemProcessCount": 412
+    "quickshellAnonymousKb": 429200,
+    "totalAnonymousKb": 432476,
+    "systemProcessCount": 413
   },
   "mechanisms": {
     "firedHookEvents": {

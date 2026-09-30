@@ -97,13 +97,31 @@ Read [`CONTRIBUTING.md`](CONTRIBUTING.md). The short version:
 
 1. Read the record you want to change.
 2. **Measure it yourself** — every record has an `## Evidence` section with
-   commands that reproduce it. If your number differs, the record is wrong.
+   commands that reproduce it. If your number differs, check which kind of
+   number it is before deciding the record is wrong (see below).
 3. **Amend that record.** Bump `amendments`, add a history line, change the
    substance.
 4. `bash run-tests.sh` — validates every record and checks the numbers.
 5. Open a PR saying what you measured.
 
 GitHub Discussions is for questions that are not yet records.
+
+## Your numbers may not match ours
+
+These records were measured on **one machine**, on Omarchy **4.0.4-1**
+(stable). If you are on a different build, some numbers will differ — and most
+differences are not mistakes.
+
+- **Structural** — command count, line counts, plugin count, migration count.
+  These differ if you are on a different Omarchy version. Worth reporting with
+  your `omarchy version`; it means the record needs re-dating, not correcting.
+- **Volatile** — timings in milliseconds, memory, process count. These differ
+  on every machine and every run, including twice on the same machine. Not a
+  bug.
+
+The exact build is recorded as data in `baseline/measurements.json` under
+`context`, so it can never drift from the numbers beside it. Run
+`bash tools/measure.sh` and compare before filing an appeal.
 
 ## Two things this repository will not do
 
