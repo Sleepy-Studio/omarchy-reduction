@@ -1,11 +1,12 @@
-# REPLACE OWNER/REPO below with the real owner and repository name before
-# publishing. As written, the link points nowhere and "Ask a question" will
-# not work for anyone.
+# Every issue arrives through a form; the Discussions link is where questions
+# go instead — ones that are not yet records ("is this a problem anyone else
+# has?", "what is the supported upgrade window?"). A question that turns out
+# to matter becomes a record through the new-measurement form.
 
 blank_issues_enabled: false
 contact_links:
   - name: Ask a question
-    url: https://github.com/OWNER/REPO/discussions
+    url: https://github.com/Sleepy-Studio/omarchy-reduction/discussions
     about: >-
       Questions that are not yet records. "Is this a problem anyone else has?",
       "what is the supported upgrade window?". A question that turns out to

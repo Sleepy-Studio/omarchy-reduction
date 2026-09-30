@@ -115,8 +115,8 @@
     ],
     "duplicateBodies": [],
     "dispatcherMs": {
-      "version": 41.5,
-      "themeList": 10.6
+      "version": 38.6,
+      "themeList": 9.7
     }
   },
   "shell": {
@@ -539,20 +539,20 @@
       {
         "program": "quickshell",
         "instances": 1,
-        "anonymousKb": 330804,
-        "privateDirtyKb": 331060
+        "anonymousKb": 428148,
+        "privateDirtyKb": 428404
       },
       {
         "program": "omarchy-crash-w",
         "instances": 2,
-        "anonymousKb": 1400,
-        "privateDirtyKb": 984
+        "anonymousKb": 1416,
+        "privateDirtyKb": 1000
       },
       {
         "program": "omarchy-hyprlan",
         "instances": 2,
-        "anonymousKb": 1052,
-        "privateDirtyKb": 548
+        "anonymousKb": 1088,
+        "privateDirtyKb": 584
       },
       {
         "program": "omarchy-system-",
@@ -567,9 +567,9 @@
         "privateDirtyKb": 384
       }
     ],
-    "quickshellAnonymousKb": 330804,
-    "totalAnonymousKb": 334028,
-    "systemProcessCount": 416
+    "quickshellAnonymousKb": 428148,
+    "totalAnonymousKb": 431424,
+    "systemProcessCount": 412
   },
   "mechanisms": {
     "firedHookEvents": {
